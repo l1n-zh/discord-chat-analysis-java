@@ -18,8 +18,7 @@ repositories {
 dependencies {
     // Use JUnit test framework.
     testImplementation(libs.junit)
-
-    // This dependency is used by the application.
+    implementation("net.dv8tion:JDA:5.0.0-beta.24")
     implementation(libs.guava)
 }
 
