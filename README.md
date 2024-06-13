@@ -1,5 +1,3 @@
 # discord-chat-analysis-java
 
-hello world
-
-test test
+hello world test
