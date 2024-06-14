@@ -20,6 +20,7 @@ dependencies {
     // Use JUnit test framework.
     testImplementation(libs.junit)
     implementation("net.dv8tion:JDA:5.0.0-beta.24")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
     implementation(libs.guava)
 }
 

@@ -3,81 +3,26 @@
  */
 package app;
 
-import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.InteractionHook;
-import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
-import net.dv8tion.jda.api.interactions.commands.OptionMapping;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.build.OptionData;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
-import net.dv8tion.jda.api.requests.GatewayIntent;
-import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+import java.io.File;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import crawler.Crawler;
 
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.EnumSet;
-import java.util.concurrent.TimeUnit;
 
-import static net.dv8tion.jda.api.interactions.commands.OptionType.*;
+class Config {
+    public String botToken;
+}
 
-public class App extends ListenerAdapter{
-    public static void main(String[] args) throws Exception{
-        EnumSet<GatewayIntent> intents = GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS);
-        JDA jda = JDABuilder.createDefault("",intents).addEventListeners(new App()).build();  
-        jda.awaitReady();
-        CommandListUpdateAction commands = jda.getGuildById("").updateCommands();
-        
-        // add clawer
-        commands.addCommands(
-            Commands.slash("crawler", "Scraping Chat Room Data")
-                .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
-        );
+public class App {
+    static Config config;
 
-        commands.addCommands(
-            Commands.slash("say", "Makes the bot say what you tell it to")
-                .addOption(STRING, "content", "What the bot should say", true) // you can add required options like this too
-        );
-        // 
-        commands.addCommands(
-            Commands.slash("stat", "Output Data")
-                .addOptions(new OptionData(USER, "user", "user") // USER type allows to include members of the server or other users by id
-                    .setRequired(true)) // This command requires a parameter
-                .addOptions(new OptionData(STRING, "reason", "The ban reason to use (default: Banned by <user>)")) // optional reason
-                    .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
-        );
-        commands.queue();
-    }
-    
-    @Override
-    public void onSlashCommandInteraction(@Nonnull SlashCommandInteractionEvent event)
-    {
-        // Only accept commands from guilds
-        if (event.getGuild() == null)
-            return;
-        switch (event.getName())
-        {
-        case "say":
-            say(event, event.getOption("content").getAsString()); // content is required so no null-check here
-            break;
-        default:
-            event.reply("I can't handle that command right now :(").setEphemeral(true).queue();
+    public static void main(String[] args) {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            config = mapper.readValue(new File("src/config.json"), Config.class);
+
+            SlashBot slashBot = new SlashBot(config.botToken);
+        } catch(Exception e){
+            e.printStackTrace();
         }
     }
-    
-    public void say(SlashCommandInteractionEvent event, String content)
-    {
-        event.reply(content).queue(); // This requires no permissions!
-    }
-    
 }
