@@ -21,6 +21,7 @@ dependencies {
     testImplementation(libs.junit)
     implementation("net.dv8tion:JDA:5.0.0-beta.24")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
+    implementation("org.mockito:mockito-core:5.12.0")
     implementation(libs.guava)
 }
 
@@ -34,4 +35,10 @@ java {
 application {
     // Define the main class for the application.
     mainClass = "app.App"
+}
+
+tasks.test {
+    testLogging {
+        showStandardStreams = true
+    }
 }
