@@ -3,17 +3,15 @@ package crawler;
 import static org.junit.Assert.*;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
-import crawler.Crawler;
+
 
 public class DataTest {
 
