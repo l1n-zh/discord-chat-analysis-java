@@ -2,6 +2,9 @@ package app;
 
 
 import javax.annotation.Nonnull;
+
+import crawler.Crawler;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -70,6 +73,10 @@ class SlashCommandListener extends ListenerAdapter{
         {
         case "say":
             say(event, event.getOption("content").getAsString()); // content is required so no null-check here
+            break;
+        case "crawler":
+            Crawler crawler = new Crawler(event.getJDA());
+            crawler.crawl(event.getGuild().getId());
             break;
         default:
             event.reply("I can't handle that command right now :(").setEphemeral(true).queue();
