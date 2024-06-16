@@ -43,11 +43,6 @@ public class SlashBot extends ListenerAdapter {
                 Commands.slash("crawler", "Scraping Chat Room Data")
                         .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
         );
-
-        commands.addCommands(
-                Commands.slash("say", "Makes the bot say what you tell it to")
-                        .addOption(STRING, "content", "What the bot should say", true) // you can add required options like this too
-        );
         commands.addCommands(
                 Commands.slash("server", "open server to show data")
                         .setGuildOnly(true) // you can add required options like this too
@@ -60,15 +55,11 @@ class SlashCommandListener extends ListenerAdapter{
     @Override
     public void onSlashCommandInteraction(@Nonnull SlashCommandInteractionEvent event)
     {
-        // Only accept commands from guilds
         if (event.getGuild() == null)
             return;
 
         switch (event.getName())
         {
-        case "say":
-            say(event, event.getOption("content").getAsString()); // content is required so no null-check here
-            break;
         case "crawler":
             Crawler crawler = new Crawler(event.getJDA());
             crawler.crawl(event.getGuild().getId());
@@ -86,10 +77,5 @@ class SlashCommandListener extends ListenerAdapter{
         default:
             event.reply("I can't handle that command right now :(").setEphemeral(true).queue();
         }
-    }
-    public void say(SlashCommandInteractionEvent event, String content)
-    {
-        event.reply(content).queue(); // This requires no permissions!
-    }
-    
+    }    
 }
