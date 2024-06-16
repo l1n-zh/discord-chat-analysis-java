@@ -4,7 +4,6 @@ package app;
 import javax.annotation.Nonnull;
 
 import crawler.Crawler;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -49,14 +48,9 @@ public class SlashBot extends ListenerAdapter {
                 Commands.slash("say", "Makes the bot say what you tell it to")
                         .addOption(STRING, "content", "What the bot should say", true) // you can add required options like this too
         );
-        // 
         commands.addCommands(
-                Commands.slash("stat", "Output Data")
-                        .addOptions(new OptionData(USER, "user", "user") // USER type allows to include members of the server or other users by id
-                                .setRequired(true)) // This command requires a parameter
-                        .addOptions(
-                                new OptionData(STRING, "reason", "The ban reason to use (default: Banned by <user>)")) // optional reason
-                        .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
+                Commands.slash("server", "open server to show data")
+                        .setGuildOnly(true) // you can add required options like this too
         );
         commands.queue();
     }
@@ -69,6 +63,7 @@ class SlashCommandListener extends ListenerAdapter{
         // Only accept commands from guilds
         if (event.getGuild() == null)
             return;
+
         switch (event.getName())
         {
         case "say":
@@ -78,11 +73,20 @@ class SlashCommandListener extends ListenerAdapter{
             Crawler crawler = new Crawler(event.getJDA());
             crawler.crawl(event.getGuild().getId());
             break;
+        case "server":
+            try{
+                int port = CustomHttpServer.OpenServer();
+                event.reply("http://localhost:" + port + "/").setEphemeral(true).queue();
+                System.out.println("success");
+            }catch(Exception e){
+                event.reply("error").setEphemeral(true).queue();
+                System.out.println("error");
+            }
+            break;
         default:
             event.reply("I can't handle that command right now :(").setEphemeral(true).queue();
         }
     }
-    
     public void say(SlashCommandInteractionEvent event, String content)
     {
         event.reply(content).queue(); // This requires no permissions!
