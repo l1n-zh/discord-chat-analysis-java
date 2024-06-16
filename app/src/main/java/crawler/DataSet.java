@@ -39,18 +39,21 @@ public class DataSet {
     }
 
     public void addMessage(Message message) {
-        String channelID = message.getChannelId();
-        if (!dataSet.containsKey(channelID))
-            dataSet.put(channelID, new ChannelData());
+        String channelId = message.getChannelId();
+        if (!dataSet.containsKey(channelId))
+            dataSet.put(channelId, new ChannelData());
         MessageData messageData = new MessageData();
-        messageData.authorID = message.getAuthor().getId();
+        messageData.id = message.getId();
+        messageData.authorId = message.getAuthor().getId();
         messageData.charCount = message.getContentDisplay().length();
-        dataSet.get(channelID).messages.add(messageData);
-        dataSet.get(channelID).lastUpdateMessageID = message.getId();
+        dataSet.get(channelId).messages.add(messageData);
     }
 
-    public ChannelData getChannelData(String channelID) {
-        return dataSet.getOrDefault(channelID, new ChannelData());
+    public String getChannelLastUpdate(String channelId) {
+        ChannelData channelData = dataSet.get(channelId);
+        if (channelData != null && !channelData.messages.isEmpty()) {
+            return channelData.messages.getLast().id;
+        } else return "0000000000000000000";
     }
 
     public void save() throws IOException {
