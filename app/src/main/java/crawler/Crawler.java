@@ -25,14 +25,14 @@ public class Crawler {
         jda.addEventListener(new ReadyListener());
     }
 
-    public void crawl(String guildID){
-        File dataFile = new File("src/main/java/crawler/data/"+guildID+".json");
+    public void crawl(String guildId){
+        File dataFile = new File("src/main/java/crawler/data/"+guildId+".json");
         try{
             DataSet dataSet = new DataSet(dataFile);
-            for (TextChannel channel : jda.getGuildById(guildID).getTextChannels()){
+            for (TextChannel channel : jda.getGuildById(guildId).getTextChannels()){
                 String channelId = channel.getId();
                 List<Message> messages;
-                while(!(messages = channel.getHistoryAfter(dataSet.getChannelData(channelId).lastUpdateMessageID, 100).complete().getRetrievedHistory()).isEmpty()){
+                while(!(messages = channel.getHistoryAfter(dataSet.getChannelLastUpdate(channelId), 100).complete().getRetrievedHistory()).isEmpty()){
                     messages.reversed().forEach( m -> dataSet.addMessage(m));
                     dataSet.save();
                 }
