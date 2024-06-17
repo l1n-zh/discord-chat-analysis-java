@@ -1,1 +1,489 @@
-{"1251578118851006484":{"lastUpdateMessageID":"1251579181372801045","messages":[{"authorID":"886902195776258099","charCount":4},{"authorID":"634926663997718567","charCount":3},{"authorID":"634926663997718567","charCount":3},{"authorID":"886902195776258099","charCount":4},{"authorID":"886902195776258099","charCount":5}]},"1250711874111148066":{"lastUpdateMessageID":"1252248978037280861","messages":[{"authorID":"634926663997718567","charCount":0},{"authorID":"886902195776258099","charCount":0},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":3},{"authorID":"634926663997718567","charCount":3},{"authorID":"634926663997718567","charCount":3},{"authorID":"634926663997718567","charCount":4},{"authorID":"1077966519264346226","charCount":0},{"authorID":"886902195776258099","charCount":7},{"authorID":"1250678656293011559","charCount":0},{"authorID":"634926663997718567","charCount":2},{"authorID":"886902195776258099","charCount":1},{"authorID":"886902195776258099","charCount":16},{"authorID":"634926663997718567","charCount":17},{"authorID":"634926663997718567","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":3},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":6},{"authorID":"886902195776258099","charCount":4},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":3},{"authorID":"634926663997718567","charCount":5},{"authorID":"634926663997718567","charCount":4},{"authorID":"886902195776258099","charCount":4},{"authorID":"886902195776258099","charCount":19},{"authorID":"1250678656293011559","charCount":5},{"authorID":"1250678656293011559","charCount":2},{"authorID":"1250678656293011559","charCount":2},{"authorID":"1250678656293011559","charCount":24},{"authorID":"1077966519264346226","charCount":2},{"authorID":"886902195776258099","charCount":19},{"authorID":"634926663997718567","charCount":4},{"authorID":"634926663997718567","charCount":7},{"authorID":"886902195776258099","charCount":10},{"authorID":"634926663997718567","charCount":3},{"authorID":"634926663997718567","charCount":2},{"authorID":"634926663997718567","charCount":4},{"authorID":"634926663997718567","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":1},{"authorID":"634926663997718567","charCount":8},{"authorID":"886902195776258099","charCount":4},{"authorID":"634926663997718567","charCount":2},{"authorID":"886902195776258099","charCount":8},{"authorID":"886902195776258099","charCount":10},{"authorID":"634926663997718567","charCount":7},{"authorID":"886902195776258099","charCount":9},{"authorID":"634926663997718567","charCount":18},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":13},{"authorID":"634926663997718567","charCount":10},{"authorID":"886902195776258099","charCount":16},{"authorID":"634926663997718567","charCount":4},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":4},{"authorID":"634926663997718567","charCount":12},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":481},{"authorID":"634926663997718567","charCount":2},{"authorID":"634926663997718567","charCount":6},{"authorID":"634926663997718567","charCount":2},{"authorID":"634926663997718567","charCount":9},{"authorID":"634926663997718567","charCount":5},{"authorID":"886902195776258099","charCount":5},{"authorID":"634926663997718567","charCount":11},{"authorID":"886902195776258099","charCount":12},{"authorID":"886902195776258099","charCount":3},{"authorID":"886902195776258099","charCount":8},{"authorID":"634926663997718567","charCount":4},{"authorID":"634926663997718567","charCount":4},{"authorID":"886902195776258099","charCount":0},{"authorID":"634926663997718567","charCount":81},{"authorID":"634926663997718567","charCount":81},{"authorID":"886902195776258099","charCount":3},{"authorID":"886902195776258099","charCount":81},{"authorID":"886902195776258099","charCount":64},{"authorID":"634926663997718567","charCount":3},{"authorID":"886902195776258099","charCount":3},{"authorID":"1250678656293011559","charCount":7},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":7},{"authorID":"886902195776258099","charCount":0},{"authorID":"886902195776258099","charCount":0},{"authorID":"886902195776258099","charCount":9},{"authorID":"634926663997718567","charCount":1},{"authorID":"634926663997718567","charCount":67},{"authorID":"634926663997718567","charCount":9},{"authorID":"634926663997718567","charCount":11},{"authorID":"886902195776258099","charCount":2},{"authorID":"886902195776258099","charCount":2},{"authorID":"634926663997718567","charCount":20},{"authorID":"886902195776258099","charCount":0},{"authorID":"886902195776258099","charCount":3},{"authorID":"634926663997718567","charCount":32},{"authorID":"886902195776258099","charCount":68},{"authorID":"886902195776258099","charCount":66},{"authorID":"886902195776258099","charCount":155},{"authorID":"634926663997718567","charCount":3}]},"1251578167869837344":{"lastUpdateMessageID":"1251578234374590700","messages":[{"authorID":"886902195776258099","charCount":8},{"authorID":"634926663997718567","charCount":8},{"authorID":"634926663997718567","charCount":3},{"authorID":"634926663997718567","charCount":3}]}}
+{
+    "1251578118851006484": {
+        "lastUpdateMessageID": "1252254483895943178",
+        "messages": [
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 5
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            }
+        ]
+    },
+    "1250711874111148066": {
+        "lastUpdateMessageID": "1252254454623768596",
+        "messages": [
+            {
+                "authorID": "634926663997718567",
+                "charCount": 0
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 0
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "1077966519264346226",
+                "charCount": 0
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 7
+            },
+            {
+                "authorID": "1250678656293011559",
+                "charCount": 0
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 1
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 16
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 17
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 6
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 5
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 19
+            },
+            {
+                "authorID": "1250678656293011559",
+                "charCount": 5
+            },
+            {
+                "authorID": "1250678656293011559",
+                "charCount": 2
+            },
+            {
+                "authorID": "1250678656293011559",
+                "charCount": 2
+            },
+            {
+                "authorID": "1250678656293011559",
+                "charCount": 24
+            },
+            {
+                "authorID": "1077966519264346226",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 19
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 7
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 10
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 1
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 8
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 8
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 10
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 7
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 9
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 18
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 13
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 10
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 16
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 12
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 481
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 6
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 9
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 5
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 5
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 11
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 12
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 8
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 4
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 0
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 81
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 81
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 81
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 64
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 3
+            },
+            {
+                "authorID": "1250678656293011559",
+                "charCount": 7
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 7
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 0
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 0
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 9
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 1
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 67
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 9
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 11
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 20
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 0
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 32
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 68
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 66
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 155
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 4
+            }
+        ]
+    },
+    "1251578167869837344": {
+        "lastUpdateMessageID": "1252260057182240809",
+        "messages": [
+            {
+                "authorID": "886902195776258099",
+                "charCount": 8
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 8
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "634926663997718567",
+                "charCount": 3
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 2
+            },
+            {
+                "authorID": "886902195776258099",
+                "charCount": 0
+            }
+        ]
+    }
+}
