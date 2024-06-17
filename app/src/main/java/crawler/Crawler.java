@@ -35,12 +35,13 @@ public class Crawler {
             for (TextChannel channel : guild.getTextChannels()){
                 String channelId = channel.getId();
                 String channelName = channel.getName();
-                String channelCategoryName = channel.getParentCategory().getName();
+                String channelCategoryName = channel.getParentCategory() != null ? channel.getParentCategory().getName() : "";
 
                 List<Message> messages;
                 while(!(messages = channel.getHistoryAfter(dataSet.getChannelLastUpdate(channelId), 100).complete().getRetrievedHistory()).isEmpty()){
                     messages.reversed().forEach( m -> dataSet.addMessage(m));
                     dataSet.save();
+                    System.out.println("crawling " + channel.getName());
                 }
                 
                 ExternalDataSet.addExternalChannel(channelId,channelName,channelCategoryName);

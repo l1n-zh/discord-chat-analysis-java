@@ -21,7 +21,7 @@ public class SlashBot extends ListenerAdapter {
         EnumSet<GatewayIntent> intents = GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS);
         JDA jda = JDABuilder.createDefault(token, intents).addEventListeners(new SlashCommandListener()).build();
         jda.awaitReady();
-        CommandListUpdateAction commands = jda.getGuildById("1250711874111148062").updateCommands();
+        CommandListUpdateAction commands = jda.getGuildById("922851148510134293").updateCommands();
 
         // add clawer
         commands.addCommands(
