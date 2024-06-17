@@ -23,10 +23,10 @@ public class CustomHttpServer {
         server = HttpServer.create(new InetSocketAddress(port), 0);
         // 設置處理請求的處理程序
         server.createContext("/", new FileHandler("src/main/resource/public/index.html", "text/html"));
-        server.createContext("/assets/index-DYjq9K3_.js", new FileHandler("src/main/resource/public/assets/index-DYjq9K3_.js", "application/javascript"));
-        server.createContext("/assets/index-BxA8tnLW.css", new FileHandler("src/main/resource/public/assets/index-BxA8tnLW.css", "text/css"));
+        server.createContext("/assets/index.js", new FileHandler("src/main/resource/public/assets/index.js", "application/javascript"));
+        server.createContext("/assets/index.css", new FileHandler("src/main/resource/public/assets/index.css", "text/css"));
         server.createContext("/assets/data.json", new FileHandler("src/main/resource/public/assets/"+fileID+".json", "application/json"));
-        server.createContext("/assets/external.json", new FileHandler("src/main/resource/public/assets/data.json", "application/json"));
+        server.createContext("/assets/external.json", new FileHandler("src/main/resource/public/assets/external.json", "application/json"));
         // 設置默認的執行器
         server.setExecutor(null);
 
