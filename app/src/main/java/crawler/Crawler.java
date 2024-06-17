@@ -25,12 +25,12 @@ public class Crawler {
     }
 
     public void crawl(String guildID,@NotNull SlashCommandInteractionEvent event){
-        File dataFile = new File("src/main/resource/public/assets/"+guildID+".json");
-        File channelFile = new File("src/main/resource/public/assets/external.json");
+        File dataFile = new File("src/main/resource/data/"+guildID+"/data.json");
+        File externalFile = new File("src/main/resource/data/"+guildID+"/external.json");
         try{
             
             DataSet dataSet = new DataSet(dataFile);
-            DataSet ExternalDataSet = new DataSet(channelFile);            
+            DataSet ExternalDataSet = new DataSet(externalFile);            
             Guild guild = jda.getGuildById(guildID);
             for (TextChannel channel : guild.getTextChannels()){
                 String channelId = channel.getId();
