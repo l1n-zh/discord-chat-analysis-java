@@ -5,7 +5,6 @@ package app;
 
 import java.io.File;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import crawler.Crawler;
 
 
 class Config {

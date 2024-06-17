@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 
 public class CustomHttpServer {
     private static HttpServer server;
-    public static int OpenServer() throws IOException {
+    public static int OpenServer(String fileID) throws IOException {
         int port = 8000;
         if (isPortInUse(port)) {
             System.out.println("Port 8000 is already in use. Attempting to stop the existing server...");
@@ -21,14 +21,12 @@ public class CustomHttpServer {
         }
         // 創建HttpServer，綁定到本地端口8000
         server = HttpServer.create(new InetSocketAddress(port), 0);
-        String currentDir = System.getProperty("user.dir");
-        System.out.println("Current working directory: " + currentDir);
         // 設置處理請求的處理程序
         server.createContext("/", new FileHandler("src/main/resource/public/index.html", "text/html"));
         server.createContext("/assets/index-DYjq9K3_.js", new FileHandler("src/main/resource/public/assets/index-DYjq9K3_.js", "application/javascript"));
         server.createContext("/assets/index-BxA8tnLW.css", new FileHandler("src/main/resource/public/assets/index-BxA8tnLW.css", "text/css"));
-        server.createContext("/assets/data.json", new FileHandler("src/main/resource/public/assets/data.json", "application/json"));
-
+        server.createContext("/assets/data.json", new FileHandler("src/main/resource/public/assets/"+fileID+".json", "application/json"));
+        server.createContext("/assets/external.json", new FileHandler("src/main/resource/public/assets/data.json", "application/json"));
         // 設置默認的執行器
         server.setExecutor(null);
 

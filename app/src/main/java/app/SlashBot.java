@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
@@ -25,6 +26,7 @@ public class SlashBot extends ListenerAdapter {
         // add clawer
         commands.addCommands(
                 Commands.slash("crawler", "Scraping Chat Room Data")
+                        .setDefaultPermissions(DefaultMemberPermissions.ENABLED)
                         .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
         );
         commands.addCommands(
@@ -47,16 +49,15 @@ class SlashCommandListener extends ListenerAdapter{
         case "crawler":
             Crawler crawler = new Crawler(event.getJDA());
             String guildID = event.getGuild().getId();
-            crawler.crawl(guildID);
+            crawler.crawl(guildID,event);
             break;
         case "server":
             try{
-                int port = CustomHttpServer.OpenServer();
-                event.reply("http://localhost:" + port + "/").setEphemeral(true).queue();
-                System.out.println("success");
+                String fileID = event.getGuild().getId();
+                int port = CustomHttpServer.OpenServer(fileID);
+                event.reply("http://localhost:" + port + "/").setEphemeral(true).complete();
             }catch(Exception e){
                 event.reply("error").setEphemeral(true).queue();
-                System.out.println("error");
             }
             break;
         default:
