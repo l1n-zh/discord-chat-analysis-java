@@ -38,7 +38,7 @@ public class Crawler {
                 String channelCategoryName = channel.getParentCategory().getName();
 
                 List<Message> messages;
-                while(!(messages = channel.getHistoryAfter(dataSet.getChannelData(channelId).lastUpdateMessageID, 100).complete().getRetrievedHistory()).isEmpty()){
+                while(!(messages = channel.getHistoryAfter(dataSet.getChannelLastUpdate(channelId), 100).complete().getRetrievedHistory()).isEmpty()){
                     messages.reversed().forEach( m -> dataSet.addMessage(m));
                     dataSet.save();
                 }

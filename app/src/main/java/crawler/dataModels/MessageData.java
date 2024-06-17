@@ -1,6 +1,7 @@
 package crawler.dataModels;
 
 public class MessageData {
-    public String authorID;
+    public String id;
+    public String authorId;
     public int charCount;
 }
