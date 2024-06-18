@@ -8,3 +8,4 @@ build
 
 *.class
 app/src/config.json
+app/src/main/resource/data
