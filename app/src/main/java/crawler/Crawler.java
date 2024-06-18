@@ -25,7 +25,7 @@ public class Crawler {
         jda.addEventListener(new ReadyListener());
     }
 
-    public void crawl(String guildID,@NotNull SlashCommandInteractionEvent event){
+    public void crawl(String guildID){
         File dataFile = new File("src/main/resource/data/"+guildID+"/data.json");
         File externalFile = new File("src/main/resource/data/"+guildID+"/external.json");
         try{
@@ -62,9 +62,8 @@ public class Crawler {
                     }
                 }
             });
-            //event.reply("success").setEphemeral(true).queue();
+            System.out.println("Data has been updated, use /server on discord guild to generate statistics");
         } catch (Exception e) {
-            //event.reply("error").setEphemeral(true).queue();
             e.printStackTrace();
         }
     }

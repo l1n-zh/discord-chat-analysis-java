@@ -53,7 +53,8 @@ class SlashCommandListener extends ListenerAdapter{
         case "crawler":
             Crawler crawler = new Crawler(event.getJDA());
             String guildID = event.getGuild().getId();
-            crawler.crawl(guildID,event);
+            crawler.crawl(guildID);
+            event.reply("start crawler").setEphemeral(true).complete();
             break;
         case "server":
             try{
