@@ -7,6 +7,7 @@ import crawler.Crawler;
 import java.util.EnumSet;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
@@ -21,19 +22,22 @@ public class SlashBot extends ListenerAdapter {
         EnumSet<GatewayIntent> intents = GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS);
         JDA jda = JDABuilder.createDefault(token, intents).addEventListeners(new SlashCommandListener()).build();
         jda.awaitReady();
-        CommandListUpdateAction commands = jda.getGuildById("922851148510134293").updateCommands();
+        
+        for (Guild guild : jda.getGuilds()) {
+            CommandListUpdateAction commands = guild.updateCommands();
 
-        // add clawer
-        commands.addCommands(
-                Commands.slash("crawler", "Scraping Chat Room Data")
-                        .setDefaultPermissions(DefaultMemberPermissions.ENABLED)
-                        .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
-        );
-        commands.addCommands(
-                Commands.slash("server", "open server to show data")
-                        .setGuildOnly(true) // you can add required options like this too
-        );
-        commands.queue();
+            // add clawer
+            commands.addCommands(
+                    Commands.slash("crawler", "Scraping Chat Room Data")
+                            .setDefaultPermissions(DefaultMemberPermissions.ENABLED)
+                            .setGuildOnly(true) // This way the command can only be executed from a guild, and not the DMs
+            );
+            commands.addCommands(
+                    Commands.slash("server", "open server to show data")
+                            .setGuildOnly(true) // you can add required options like this too
+            );
+            commands.queue();
+        }
     }
 }
     
