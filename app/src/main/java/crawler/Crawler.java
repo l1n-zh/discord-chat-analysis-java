@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
+import net.dv8tion.jda.api.exceptions.MissingAccessException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import javax.annotation.Nonnull;
 
@@ -38,10 +39,14 @@ public class Crawler {
                 String channelCategoryName = channel.getParentCategory() != null ? channel.getParentCategory().getName() : "";
 
                 List<Message> messages;
-                while(!(messages = channel.getHistoryAfter(dataSet.getChannelLastUpdate(channelId), 100).complete().getRetrievedHistory()).isEmpty()){
-                    messages.reversed().forEach( m -> dataSet.addMessage(m));
-                    dataSet.save();
-                    System.out.println("crawling " + channel.getName());
+                try{
+                    while(!(messages = channel.getHistoryAfter(dataSet.getChannelLastUpdate(channelId), 100).complete().getRetrievedHistory()).isEmpty()){
+                        messages.reversed().forEach( m -> dataSet.addMessage(m));
+                        dataSet.save();
+                        System.out.println("crawling " + channel.getName());
+                    }
+                } catch(MissingAccessException e){
+                    System.err.println("Missing permission: " + channelName);
                 }
                 
                 ExternalDataSet.addExternalChannel(channelId,channelName,channelCategoryName);
@@ -57,9 +62,9 @@ public class Crawler {
                     }
                 }
             });
-            event.reply("success").setEphemeral(true).queue();
+            //event.reply("success").setEphemeral(true).queue();
         } catch (Exception e) {
-            event.reply("error").setEphemeral(true).queue();
+            //event.reply("error").setEphemeral(true).queue();
             e.printStackTrace();
         }
     }
